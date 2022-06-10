@@ -27,6 +27,6 @@ public class TestSpringBoot2Application {
     private JdbcTemplate jdbcTemplate;
     @PostConstruct
     public void initDB() {
-        jdbcTemplate.update("create table jokes (joke text)");
+        jdbcTemplate.update("create table if not exists jokes (joke text)");
     }
 }

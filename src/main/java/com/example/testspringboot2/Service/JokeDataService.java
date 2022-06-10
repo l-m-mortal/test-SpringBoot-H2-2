@@ -17,7 +17,7 @@ public class JokeDataService implements JokeDataInterface {
 
     @Override
     public void save(String joke) {
-        jdbcTemplate.update("insert into jokes (joke) values (?)", joke);
+        jdbcTemplate.update("insert into jokes (joke) values  (?)", joke);
     }
 
     @Override
