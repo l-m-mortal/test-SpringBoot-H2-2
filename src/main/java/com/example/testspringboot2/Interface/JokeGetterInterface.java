@@ -1,2 +1,5 @@
-package com.example.testspringboot2.Interface;public interface JokeGetterInterface {
+package com.example.testspringboot2.Interface;
+
+public interface JokeGetterInterface {
+    String getJoke();
 }

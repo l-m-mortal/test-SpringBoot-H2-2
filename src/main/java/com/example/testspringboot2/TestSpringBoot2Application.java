@@ -2,6 +2,8 @@ package com.example.testspringboot2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class TestSpringBoot2Application {
@@ -10,4 +12,8 @@ public class TestSpringBoot2Application {
         SpringApplication.run(TestSpringBoot2Application.class, args);
     }
 
+    @Bean
+    RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
 }
