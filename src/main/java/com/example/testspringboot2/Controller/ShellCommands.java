@@ -2,6 +2,7 @@ package com.example.testspringboot2.Controller;
 
 import com.example.testspringboot2.Interface.JokeDataInterface;
 import com.example.testspringboot2.Interface.JokeGetterInterface;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 
@@ -12,7 +13,7 @@ public class ShellCommands {
     public final JokeGetterInterface jokeGetterInterface;
     private final JokeDataInterface jokeDataInterface;
 
-
+@Autowired
     public ShellCommands(JokeGetterInterface jokeGetterInterface, JokeDataInterface jokeDataInterface) {
         this.jokeGetterInterface = jokeGetterInterface;
         this.jokeDataInterface = jokeDataInterface;
@@ -25,13 +26,13 @@ public class ShellCommands {
         return lastJoke;
     }
 
-    @ShellMethod("Save a joke")
+    @ShellMethod("Save last joke")
     public String save() {
        if (lastJoke != null) {
            jokeDataInterface.save(lastJoke);
            return "Saved";
        } else {
-           return "upload joke first";
+           return "Upload joke first";
        }
     }
 
@@ -40,4 +41,5 @@ public class ShellCommands {
         return jokeDataInterface.getAll().stream().collect
                 (Collectors.joining(System.lineSeparator()));
     }
+
 }

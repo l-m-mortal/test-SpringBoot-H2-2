@@ -22,9 +22,8 @@ public class JokeDataService implements JokeDataInterface {
 
     @Override
     public List<String> getAll() {
-        jdbcTemplate.query("select joke from jokes",
+        return jdbcTemplate.query("select joke from jokes",
                 (rs, rowNum) -> rs.getString("joke"));
-        return null;
     }
 
 }
