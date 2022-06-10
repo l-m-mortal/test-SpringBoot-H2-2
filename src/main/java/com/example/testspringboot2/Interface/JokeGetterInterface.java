@@ -1,5 +1,7 @@
 package com.example.testspringboot2.Interface;
 
+import com.example.testspringboot2.DTO.JokeImportDTO;
+
 public interface JokeGetterInterface {
-    String getJoke();
+    JokeImportDTO getJoke();
 }

@@ -1,5 +1,6 @@
 package com.example.testspringboot2.Service;
 
+import com.example.testspringboot2.DTO.JokeImportDTO;
 import com.example.testspringboot2.Interface.JokeGetterInterface;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,8 @@ public class RestJokeGetter implements JokeGetterInterface {
     }
 
     @Override
-    public String getJoke() {
-        ResponseEntity<String> result = restTemplate.getForEntity(url, String.class);
+    public JokeImportDTO getJoke() {
+        ResponseEntity<JokeImportDTO> result = restTemplate.getForEntity(url, JokeImportDTO.class);
         return result.getBody();
     }
 }

@@ -1,7 +1,9 @@
 package com.example.testspringboot2.Service;
 
+import com.example.testspringboot2.DTO.JokeImportDTO;
 import com.example.testspringboot2.Interface.JokeGetterInterface;
 import com.example.testspringboot2.TestSpringBoot2Application;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -24,8 +26,8 @@ public class RestJokeGetterTest {
 
     @Test
     public void getJoke() {
-        String result = jokeGetterInterface.getJoke();
-        System.out.println(result);
+        JokeImportDTO result = jokeGetterInterface.getJoke();
+        Assert.assertTrue(result.value.joke.contains("Chuck Norris"));
     }
 
 }
